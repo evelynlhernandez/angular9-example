@@ -11,7 +11,7 @@ export class TodoFooterComponent implements OnInit, OnChanges {
   @Input() list: TodoItem[];
   pendientes = 0;
   completadas = 0;
-
+  count = 0;
   constructor() { }
 
   ngOnInit(): void {
@@ -20,6 +20,7 @@ export class TodoFooterComponent implements OnInit, OnChanges {
   ngOnChanges() {
     this.completadas = this.list.filter(x => x.isCompleted).length;
     this.pendientes = this.list.filter(x => !x.isCompleted).length;
+    this.count = this.list.length;
   }
 
 }

@@ -6,7 +6,7 @@ import { TodoItem } from '../model/todo-item';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
-export class TodoListComponent implements OnInit, OnChanges {
+export class TodoListComponent implements OnInit {
 
   @Input() list: any[];
   @Output() itemStateChanged = new EventEmitter();
@@ -24,6 +24,4 @@ export class TodoListComponent implements OnInit, OnChanges {
     this.itemRemoved.emit(item);
   }
 
-  ngOnChanges() {
-  }
 }
